@@ -1,4 +1,4 @@
-import {SnakeGame} from "./game.js";
+import {SnakeGameIA as SnakeGame} from "./game.js";
 import { Plot } from "./helper.js";
 import { Info } from "./info.js";
 import { Agent } from "./agent.js";

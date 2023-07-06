@@ -1,5 +1,5 @@
 import Direction from "./game.js";
-class AgentIA{
+export class Agent{
   constructor(){
     this.nGames = 0;
     this.epsilon = 1.0; // Control randomness
@@ -138,5 +138,3 @@ class AgentIA{
     this.qTable[state0][act] = q0[act] + this.learningRate * newValue;
   }
 }
-
-export const Agent = AgentIA;  

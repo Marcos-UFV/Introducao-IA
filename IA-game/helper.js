@@ -1,4 +1,4 @@
-class HelperPlot{
+export class Plot{
   constructor(w,h){
     this.width =w;
     this.height=h;
@@ -102,5 +102,3 @@ class HelperPlot{
       .call(d3.axisBottom(this.xScale));
   }
 }
-
-export const Plot = HelperPlot;

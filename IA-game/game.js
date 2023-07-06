@@ -5,7 +5,7 @@ const Direction = {
   'DOWN':4
 }
 const BLOCK_SIZE = 20;
-class SnakeGameIA{
+export class SnakeGameIA{
   
   constructor(width,height){
     this.stage = document.querySelector("#stage");
@@ -161,6 +161,5 @@ class SnakeGameIA{
   }
   
 }
-export const SnakeGame = SnakeGameIA;
 export default Direction;
 

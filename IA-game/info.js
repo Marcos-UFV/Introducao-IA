@@ -1,4 +1,4 @@
-class HelperInfo{
+export class Info{
   constructor(){
     this.nGames=document.querySelector("#nGames");
     this.score=document.querySelector("#score");
@@ -21,5 +21,3 @@ class HelperInfo{
     this.meanScore.innerText=meanScore.toFixed(2);
   }
 }
-
-export const Info = HelperInfo;
