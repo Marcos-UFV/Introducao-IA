@@ -11,7 +11,7 @@ Melhoras consideráveis a medida que o agente aprende mais sobre o ambiente
 
 Referências
 
-[freecodeCamp](https://www.youtube.com/watch?v=L8ypSXwyBds )
+[Teach AI To Play Snake - Reinforcement Learning](https://www.youtube.com/playlist?list=PLqnslRFeH2UrDh7vUmJ60YrmWd64mTTKV)
 
 [Teaching a computer how to play Snake with Q-Learning](https://towardsdatascience.com/teaching-a-computer-how-to-play-snake-with-q-learning-93d0a316ddc0)
 
