@@ -8,3 +8,11 @@ Criação de um agente inteligente que aprende enquanto joga e melhora seu desem
 Melhoras consideráveis a medida que o agente aprende mais sobre o ambiente
 
 ![Após 118 Jogos](images/after-118-games.png)
+
+Referências
+
+[freecodeCamp](https://www.youtube.com/watch?v=L8ypSXwyBds )
+
+[Teaching a computer how to play Snake with Q-Learning](https://towardsdatascience.com/teaching-a-computer-how-to-play-snake-with-q-learning-93d0a316ddc0)
+
+[Teaching an AI to play Snake using Reinforcement Learning (Q-Learning).](https://medium.com/@italohdc/learnsnake-teaching-an-ai-to-play-snake-using-reinforcement-learning-q-learning-b63ac23dfdd1)
