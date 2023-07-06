@@ -33,10 +33,10 @@ class SnakeGameIA{
     this.score = 0;
     this.gameOver = false;
     this.food = null;
-    this._placeFood();
+    this.#placeFood();
     this.frameIteration = 0;
   }
-  _updateUI(){
+  #updateUI(){
     this.ctx.fillStyle = "#000";
     this.ctx.fillRect(0,0,this.w,this.h);
     
@@ -49,12 +49,12 @@ class SnakeGameIA{
     this.ctx.fillStyle = "#FF0000";
     this.ctx.fillRect(this.food.x,this.food.y,BLOCK_SIZE,BLOCK_SIZE);
   }
-  _placeFood(){
+  #placeFood(){
     let x = Math.floor((Math.random()*((this.w - BLOCK_SIZE)/BLOCK_SIZE)))*BLOCK_SIZE;
     let y = Math.floor((Math.random()*((this.h - BLOCK_SIZE)/BLOCK_SIZE)))*BLOCK_SIZE;
     this.food = {x:x,y:y};
     for(let i= 0; i < this.snake.length;i++){
-      if(this.food.x == this.snake[i].x && this.food.y == this.snake[i].y) this._placeFood();
+      if(this.food.x == this.snake[i].x && this.food.y == this.snake[i].y) this.#placeFood();
     }
   }
   playStep(action) {
@@ -63,7 +63,7 @@ class SnakeGameIA{
     // 1.collect user input
     
     // 2. move
-    this._move(action); // update the head
+    this.#move(action); // update the head
     this.snake.unshift(this.head);
    
     // 3. check if game over
@@ -77,12 +77,12 @@ class SnakeGameIA{
     if(this.head.x == this.food.x && this.head.y == this.food.y){
       this.score += 1;
       reward = 10;
-      this._placeFood();
+      this.#placeFood();
     }else{
       this.snake.pop();
     }
     // 5. update ui
-    this._updateUI();
+    this.#updateUI();
     // 6. return game over and score
     
     return [this.gameOver,this.score,reward];
@@ -104,7 +104,7 @@ class SnakeGameIA{
 
     return false || colision;
   }
-  _move(action){
+  #move(action){
     // [straight,right,left]
 
     let clockWise =[Direction.RIGHT, Direction.DOWN,Direction.LEFT,Direction.UP];
@@ -113,10 +113,10 @@ class SnakeGameIA{
     if([1,0,0].every((e,i)=> e == action[i])){
       newDir = clockWise[idx]; // No change
     }else if([0,1,0].every((e,i)=> e == action[i])){      
-      let nextIndex = this._remainder(idx + 1,4);
+      let nextIndex = this.#remainder(idx + 1,4);
       newDir = clockWise[nextIndex]; // right turn r -> d -> l -> u
     }else{ // [0,0,1]
-      let nextIndex = this._remainder(idx - 1,4);
+      let nextIndex = this.#remainder(idx - 1,4);
       newDir = clockWise[nextIndex]; // left turn r -> u -> l -> d
     }
     this.direction = newDir;
@@ -140,7 +140,7 @@ class SnakeGameIA{
     }
     this.head = {x:x,y:y};
   }
-  _remainder(x,r){
+  #remainder(x,r){
     return (x - Math.floor((x)/r)*r);
   }
   keyPush(e){
